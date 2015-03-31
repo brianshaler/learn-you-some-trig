@@ -20,7 +20,7 @@ module.exports = React.createFactory React.createClass
 
     displayFraction = numeral @props.fraction
       .format '0.0'
-    radians = numeral @props.fraction * Math.PI * 2
+    radians = numeral @props.fraction * 2
       .format '0.0'
     degrees = String 10 * Math.round 36 * @props.fraction
 
@@ -62,7 +62,7 @@ module.exports = React.createFactory React.createClass
               color: 'white'
           ,
             div {}, "Rotation: #{displayFraction}"
-            div {}, "(#{displayFraction}rad #{degrees}deg)"
+            div {}, "(#{radians}rad #{degrees}deg)"
           div
             className: 'label'
             style:
